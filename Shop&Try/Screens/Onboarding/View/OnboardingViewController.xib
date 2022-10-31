@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="Shop_Try" customModuleProvider="target">
             <connections>
+                <outlet property="skip" destination="sgC-sF-oYb" id="hO9-LG-Se4"/>
                 <outlet property="view" destination="bGd-4D-bhb" id="NlN-vy-8Hf"/>
             </connections>
         </placeholder>
@@ -19,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQD-aH-fDX">
-                    <rect key="frame" x="314" y="775" width="60" height="35"/>
+                    <rect key="frame" x="314" y="809" width="60" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="9nv-JP-sFZ"/>
                     </constraints>
@@ -27,7 +28,7 @@
                     <buttonConfiguration key="configuration" style="plain" title="Next"/>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXc-Px-sf2">
-                    <rect key="frame" x="16" y="775" width="59" height="35"/>
+                    <rect key="frame" x="16" y="809" width="59" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="Vr9-o2-Mgr"/>
                     </constraints>
@@ -35,16 +36,16 @@
                     <buttonConfiguration key="configuration" style="plain" title="Prev"/>
                 </button>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1kq-Gu-ar8">
-                    <rect key="frame" x="137" y="778" width="116" height="26"/>
+                    <rect key="frame" x="137" y="812" width="116" height="26"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="26" id="M6G-FE-WLX"/>
                     </constraints>
                 </pageControl>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d15-Oa-95l">
-                    <rect key="frame" x="0.0" y="90" width="390" height="677"/>
+                    <rect key="frame" x="0.0" y="43" width="390" height="758"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwR-fw-5Pg">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="677"/>
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="758"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
@@ -59,12 +60,15 @@
                     </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgC-sF-oYb">
-                    <rect key="frame" x="317" y="47" width="57" height="35"/>
+                    <rect key="frame" x="317" y="0.0" width="57" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="xgq-re-bix"/>
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Skip"/>
+                    <connections>
+                        <action selector="didClickedSkipButton:" destination="-1" eventType="touchUpInside" id="MZ5-jE-Wy1"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="7bv-Lu-YNx"/>

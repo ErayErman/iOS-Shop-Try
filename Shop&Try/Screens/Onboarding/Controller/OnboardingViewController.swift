@@ -9,13 +9,19 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 
+    @IBOutlet var skip: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.hidesBackButton = true
     }
+    
     @IBAction func continueTouched(_ sende: UIButton){
         UserDefaults.standard.set(true, forKey: "openedApp")
     }
 
+    @IBAction func didClickedSkipButton(_ sender: Any) {
+        let authVC = AuthViewController()
+        navigationController?.pushViewController(authVC, animated: true)
+    }
 }

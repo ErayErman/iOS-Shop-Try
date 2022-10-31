@@ -13,7 +13,17 @@
 		8446E71B290A8D04003AED10 /* Shop_TryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E71A290A8D04003AED10 /* Shop_TryUITests.swift */; };
 		8446E71D290A8D04003AED10 /* Shop_TryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E71C290A8D04003AED10 /* Shop_TryUITestsLaunchTests.swift */; };
 		846F9CCE290C789900A914C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846F9CCD290C789900A914C2 /* LaunchScreen.storyboard */; };
-		84C9EC50290EE7B900E03526 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9EC4F290EE7B900E03526 /* ViewController.swift */; };
+		848C828C290FEBEF000C4A9D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C828A290FEBEF000C4A9D /* AuthViewController.swift */; };
+		848C828D290FEBEF000C4A9D /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848C828B290FEBEF000C4A9D /* AuthViewController.xib */; };
+		848C8290290FF142000C4A9D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C828E290FF142000C4A9D /* SignUpViewController.swift */; };
+		848C8291290FF142000C4A9D /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848C828F290FF142000C4A9D /* SignUpViewController.xib */; };
+		848C8294290FF165000C4A9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C8292290FF165000C4A9D /* LoginViewController.swift */; };
+		848C8295290FF165000C4A9D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848C8293290FF165000C4A9D /* LoginViewController.xib */; };
+		848C8299290FF829000C4A9D /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 848C8298290FF829000C4A9D /* IQKeyboardManagerSwift */; };
+		848C829B290FFAA8000C4A9D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 848C829A290FFAA8000C4A9D /* GoogleService-Info.plist */; };
+		848C829E290FFD0B000C4A9D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 848C829D290FFD0B000C4A9D /* FirebaseAuth */; };
+		848C82A0290FFD0B000C4A9D /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 848C829F290FFD0B000C4A9D /* FirebaseDatabaseSwift */; };
+		848C82A2290FFD0B000C4A9D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 848C82A1290FFD0B000C4A9D /* FirebaseFirestoreSwift */; };
 		84C9EC58290EE9E800E03526 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9EC56290EE9E800E03526 /* OnboardingView.swift */; };
 		84C9EC59290EE9E800E03526 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C9EC57290EE9E800E03526 /* OnboardingView.xib */; };
 		84E5B72B290EECF100CBB0B6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */; };
@@ -48,7 +58,13 @@
 		8446E71A290A8D04003AED10 /* Shop_TryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop_TryUITests.swift; sourceTree = "<group>"; };
 		8446E71C290A8D04003AED10 /* Shop_TryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop_TryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		846F9CCD290C789900A914C2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		84C9EC4F290EE7B900E03526 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		848C828A290FEBEF000C4A9D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		848C828B290FEBEF000C4A9D /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		848C828E290FF142000C4A9D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		848C828F290FF142000C4A9D /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		848C8292290FF165000C4A9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		848C8293290FF165000C4A9D /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		848C829A290FFAA8000C4A9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84C9EC56290EE9E800E03526 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		84C9EC57290EE9E800E03526 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +76,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848C82A0290FFD0B000C4A9D /* FirebaseDatabaseSwift in Frameworks */,
+				848C8299290FF829000C4A9D /* IQKeyboardManagerSwift in Frameworks */,
+				848C829E290FFD0B000C4A9D /* FirebaseAuth in Frameworks */,
+				848C82A2290FFD0B000C4A9D /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +160,7 @@
 		8446E72A290A8D8D003AED10 /* Plists */ = {
 			isa = PBXGroup;
 			children = (
+				848C829A290FFAA8000C4A9D /* GoogleService-Info.plist */,
 				8446E707290A8D04003AED10 /* Info.plist */,
 			);
 			path = Plists;
@@ -148,17 +169,70 @@
 		8446E72B290A9119003AED10 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				848C8284290FDD19000C4A9D /* Authentication */,
 				84C9EC52290EE7EF00E03526 /* Main */,
 				84C9EC51290EE7E700E03526 /* Onboarding */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		848C8284290FDD19000C4A9D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				848C8285290FDD19000C4A9D /* Model */,
+				848C8286290FDD19000C4A9D /* View */,
+				848C8289290FDD19000C4A9D /* View Model */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		848C8285290FDD19000C4A9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		848C8286290FDD19000C4A9D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				848C8287290FDD19000C4A9D /* Sign Up */,
+				848C8288290FDD19000C4A9D /* Log In */,
+				848C828A290FEBEF000C4A9D /* AuthViewController.swift */,
+				848C828B290FEBEF000C4A9D /* AuthViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		848C8287290FDD19000C4A9D /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				848C828E290FF142000C4A9D /* SignUpViewController.swift */,
+				848C828F290FF142000C4A9D /* SignUpViewController.xib */,
+			);
+			path = "Sign Up";
+			sourceTree = "<group>";
+		};
+		848C8288290FDD19000C4A9D /* Log In */ = {
+			isa = PBXGroup;
+			children = (
+				848C8292290FF165000C4A9D /* LoginViewController.swift */,
+				848C8293290FF165000C4A9D /* LoginViewController.xib */,
+			);
+			path = "Log In";
+			sourceTree = "<group>";
+		};
+		848C8289290FDD19000C4A9D /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		84C9EC4C290EC9D300E03526 /* Launch Screen */ = {
 			isa = PBXGroup;
 			children = (
 				846F9CCD290C789900A914C2 /* LaunchScreen.storyboard */,
-				84C9EC4F290EE7B900E03526 /* ViewController.swift */,
 			);
 			path = "Launch Screen";
 			sourceTree = "<group>";
@@ -237,6 +311,12 @@
 			dependencies = (
 			);
 			name = "Shop&Try";
+			packageProductDependencies = (
+				848C8298290FF829000C4A9D /* IQKeyboardManagerSwift */,
+				848C829D290FFD0B000C4A9D /* FirebaseAuth */,
+				848C829F290FFD0B000C4A9D /* FirebaseDatabaseSwift */,
+				848C82A1290FFD0B000C4A9D /* FirebaseFirestoreSwift */,
+			);
 			productName = "Shop&Try";
 			productReference = 8446E6F6290A8D03003AED10 /* Shop&Try.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +389,11 @@
 				Base,
 			);
 			mainGroup = 8446E6ED290A8D03003AED10;
+			packageReferences = (
+				848C8296290FF4AC000C4A9D /* XCRemoteSwiftPackageReference "Moya" */,
+				848C8297290FF829000C4A9D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				848C829C290FFD0B000C4A9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8446E6F7290A8D03003AED10 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -326,8 +411,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				846F9CCE290C789900A914C2 /* LaunchScreen.storyboard in Resources */,
+				848C829B290FFAA8000C4A9D /* GoogleService-Info.plist in Resources */,
 				8446E703290A8D04003AED10 /* Assets.xcassets in Resources */,
+				848C828D290FEBEF000C4A9D /* AuthViewController.xib in Resources */,
 				84C9EC59290EE9E800E03526 /* OnboardingView.xib in Resources */,
+				848C8291290FF142000C4A9D /* SignUpViewController.xib in Resources */,
+				848C8295290FF165000C4A9D /* LoginViewController.xib in Resources */,
 				84E5B72C290EECF100CBB0B6 /* OnboardingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,10 +442,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848C8294290FF165000C4A9D /* LoginViewController.swift in Sources */,
+				848C828C290FEBEF000C4A9D /* AuthViewController.swift in Sources */,
 				84C9EC58290EE9E800E03526 /* OnboardingView.swift in Sources */,
-				84C9EC50290EE7B900E03526 /* ViewController.swift in Sources */,
 				8446E6FA290A8D03003AED10 /* AppDelegate.swift in Sources */,
 				84E5B72B290EECF100CBB0B6 /* OnboardingViewController.swift in Sources */,
+				848C8290290FF142000C4A9D /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +770,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		848C8296290FF4AC000C4A9D /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+		848C8297290FF829000C4A9D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+		848C829C290FFD0B000C4A9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		848C8298290FF829000C4A9D /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 848C8297290FF829000C4A9D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		848C829D290FFD0B000C4A9D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 848C829C290FFD0B000C4A9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		848C829F290FFD0B000C4A9D /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 848C829C290FFD0B000C4A9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		848C82A1290FFD0B000C4A9D /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 848C829C290FFD0B000C4A9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8446E6EE290A8D03003AED10 /* Project object */;
 }
