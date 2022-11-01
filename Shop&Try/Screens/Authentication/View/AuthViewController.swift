@@ -22,7 +22,7 @@ class AuthViewController: CAViewController {
 // MARK: - LOGIN AND SIGN UP
     @IBAction func didClickedLogin(_ sender: Any) {
         let loginVM = AuthViewModel()
-        let loginVC = LoginViewController()
+        let loginVC = LoginViewController(viewModel: loginVM)
         navigationController?.pushViewController(loginVC, animated: true)
     }
     
