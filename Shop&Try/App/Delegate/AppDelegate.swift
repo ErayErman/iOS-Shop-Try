@@ -7,15 +7,20 @@
 
 import UIKit
 import FirebaseCore
+import IQKeyboardManagerSwift
+import FirebaseFirestore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        _ = Firestore.firestore()
         setupWindow()
+        setupKeyboardManager()
         return true
     }
 
@@ -28,6 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
             self.window = window
         }
+    
+    private func setupKeyboardManager() {
+        let keyboardManager = IQKeyboardManager.shared
+        keyboardManager.enable = true
+        keyboardManager.shouldResignOnTouchOutside = true
+        keyboardManager.toolbarDoneBarButtonItemText = "Done"
+        keyboardManager.toolbarTintColor = .black
+    }
 
 }
 

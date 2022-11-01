@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="Shop_Try" customModuleProvider="target">
             <connections>
+                <outlet property="credentionTextField" destination="fzI-CW-geC" id="bJT-Ff-Y22"/>
+                <outlet property="nameTextField" destination="xg2-Gd-fCb" id="I6E-Lh-98N"/>
+                <outlet property="numberTextField" destination="ghd-mF-FdS" id="PhP-Ck-xWV"/>
+                <outlet property="passwordTextField" destination="Y4u-2e-ddQ" id="jk2-u9-SjQ"/>
+                <outlet property="signUpButton" destination="OOT-qD-MgY" id="h0Q-mG-Otd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -53,7 +58,7 @@
                                     <rect key="frame" x="0.0" y="221" width="390" height="45"/>
                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICF-jm-Vmp">
                                     <rect key="frame" x="0.0" y="276" width="390" height="45.333333333333314"/>
@@ -68,6 +73,9 @@
                                             <color key="backgroundColor" systemColor="systemCyanColor"/>
                                         </backgroundConfiguration>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="didClickedSignUp:" destination="-1" eventType="touchUpInside" id="Kdo-hK-cu2"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

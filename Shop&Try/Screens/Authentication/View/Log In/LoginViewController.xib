@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Shop_Try" customModuleProvider="target">
             <connections>
+                <outlet property="credentionTextField" destination="Hfr-R4-hJ5" id="NY7-t4-1b1"/>
+                <outlet property="loginButton" destination="QPo-Ie-WNU" id="4vI-E2-eiL"/>
+                <outlet property="passwordTextField" destination="bKR-H7-1Tb" id="s5M-7W-lbT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,14 +38,14 @@
                                     <rect key="frame" x="0.0" y="78.333333333333343" width="390" height="68.333333333333343"/>
                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <textInputTraits key="textInputTraits" textContentType="email"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-H7-1Tb">
                                     <rect key="frame" x="0.0" y="156.66666666666666" width="390" height="68.333333333333343"/>
                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" textContentType="password"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x75-Il-WGI">
                                     <rect key="frame" x="0.0" y="235.00000000000003" width="390" height="68.333333333333343"/>
@@ -57,6 +60,9 @@
                                             <color key="backgroundColor" red="0.94328004119999997" green="0.001566518715" blue="0.1300533173" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </backgroundConfiguration>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="didClickedLoginButton:" destination="-1" eventType="touchUpInside" id="lfN-Ij-bzG"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

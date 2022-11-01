@@ -7,7 +7,8 @@
 
 import UIKit
 
-class AuthViewController: UIViewController {
+
+class AuthViewController: CAViewController {
 
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var signupButton: UIButton!
@@ -20,12 +21,14 @@ class AuthViewController: UIViewController {
     
 // MARK: - LOGIN AND SIGN UP
     @IBAction func didClickedLogin(_ sender: Any) {
+        let loginVM = AuthViewModel()
         let loginVC = LoginViewController()
         navigationController?.pushViewController(loginVC, animated: true)
     }
     
     @IBAction func didClickedSignUp(_ sender: Any) {
-        let signVC = SignUpViewController()
+        let signVM = AuthViewModel()
+        let signVC = SignUpViewController(viewModel: signVM)
         navigationController?.pushViewController(signVC, animated: true)
     }
 }

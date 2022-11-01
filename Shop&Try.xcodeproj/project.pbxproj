@@ -12,6 +12,9 @@
 		8446E711290A8D04003AED10 /* Shop_TryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E710290A8D04003AED10 /* Shop_TryTests.swift */; };
 		8446E71B290A8D04003AED10 /* Shop_TryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E71A290A8D04003AED10 /* Shop_TryUITests.swift */; };
 		8446E71D290A8D04003AED10 /* Shop_TryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E71C290A8D04003AED10 /* Shop_TryUITestsLaunchTests.swift */; };
+		845659CE29111B6F00FAB660 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845659CD29111B6F00FAB660 /* AuthViewModel.swift */; };
+		845659D42911206600FAB660 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845659D32911206600FAB660 /* AlertPresentable.swift */; };
+		845659D62911207D00FAB660 /* CAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845659D52911207D00FAB660 /* CAViewController.swift */; };
 		846F9CCE290C789900A914C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846F9CCD290C789900A914C2 /* LaunchScreen.storyboard */; };
 		848C828C290FEBEF000C4A9D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C828A290FEBEF000C4A9D /* AuthViewController.swift */; };
 		848C828D290FEBEF000C4A9D /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848C828B290FEBEF000C4A9D /* AuthViewController.xib */; };
@@ -57,6 +60,9 @@
 		8446E716290A8D04003AED10 /* Shop&TryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shop&TryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8446E71A290A8D04003AED10 /* Shop_TryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop_TryUITests.swift; sourceTree = "<group>"; };
 		8446E71C290A8D04003AED10 /* Shop_TryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop_TryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		845659CD29111B6F00FAB660 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		845659D32911206600FAB660 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		845659D52911207D00FAB660 /* CAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAViewController.swift; sourceTree = "<group>"; };
 		846F9CCD290C789900A914C2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848C828A290FEBEF000C4A9D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		848C828B290FEBEF000C4A9D /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 		8446E729290A8D1C003AED10 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				845659D029111C5900FAB660 /* Core */,
 				84C9EC4E290EC9E900E03526 /* Assets */,
 				84C9EC4D290EC9E200E03526 /* Delegate */,
 				84C9EC4C290EC9D300E03526 /* Launch Screen */,
@@ -174,6 +181,31 @@
 				84C9EC51290EE7E700E03526 /* Onboarding */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		845659D029111C5900FAB660 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				845659D22911204D00FAB660 /* Helpers */,
+				845659D129111C6100FAB660 /* CAKit */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		845659D129111C6100FAB660 /* CAKit */ = {
+			isa = PBXGroup;
+			children = (
+				845659D52911207D00FAB660 /* CAViewController.swift */,
+			);
+			path = CAKit;
+			sourceTree = "<group>";
+		};
+		845659D22911204D00FAB660 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				845659D32911206600FAB660 /* AlertPresentable.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		848C8284290FDD19000C4A9D /* Authentication */ = {
@@ -225,6 +257,7 @@
 		848C8289290FDD19000C4A9D /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				845659CD29111B6F00FAB660 /* AuthViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -442,11 +475,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845659D62911207D00FAB660 /* CAViewController.swift in Sources */,
 				848C8294290FF165000C4A9D /* LoginViewController.swift in Sources */,
 				848C828C290FEBEF000C4A9D /* AuthViewController.swift in Sources */,
 				84C9EC58290EE9E800E03526 /* OnboardingView.swift in Sources */,
+				845659CE29111B6F00FAB660 /* AuthViewModel.swift in Sources */,
 				8446E6FA290A8D03003AED10 /* AppDelegate.swift in Sources */,
 				84E5B72B290EECF100CBB0B6 /* OnboardingViewController.swift in Sources */,
+				845659D42911206600FAB660 /* AlertPresentable.swift in Sources */,
 				848C8290290FF142000C4A9D /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
