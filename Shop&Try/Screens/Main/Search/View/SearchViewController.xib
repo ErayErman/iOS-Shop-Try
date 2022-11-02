@@ -14,7 +14,6 @@
                 <outlet property="categoryControll" destination="Ugs-hb-7ga" id="0WP-js-dr5"/>
                 <outlet property="collectionView" destination="doh-hF-lET" id="i3S-FP-G3r"/>
                 <outlet property="searchBar" destination="ARm-jh-BrX" id="KVK-Iz-XZ1"/>
-                <outlet property="searchDisplayController" destination="5b5-kd-Ffj" id="IHm-Hp-x4b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -71,15 +70,6 @@
             </constraints>
             <point key="canvasLocation" x="-26.153846153846153" y="20.616113744075829"/>
         </view>
-        <searchDisplayController id="5b5-kd-Ffj">
-            <connections>
-                <outlet property="delegate" destination="-1" id="rhW-sO-0mI"/>
-                <outlet property="searchBar" destination="ARm-jh-BrX" id="fBR-AT-JTP"/>
-                <outlet property="searchContentsController" destination="-1" id="NLK-6G-DJ1"/>
-                <outlet property="searchResultsDataSource" destination="-1" id="Nbv-J0-MpQ"/>
-                <outlet property="searchResultsDelegate" destination="-1" id="NlI-jk-4Pq"/>
-            </connections>
-        </searchDisplayController>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">

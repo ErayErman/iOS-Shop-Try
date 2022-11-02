@@ -1,43 +1,40 @@
 import Foundation
+import Shop_Try_API
 
- enum ProductsChanges {
-     case didErrorOccurred(_ error: Error)
-     case didFetchProducts
- }
+protocol ProductsViewModelDelegate: AnyObject {
+    func didErrorOccurred(_ error: Error)
+    func didFetchProducts()
+}
 
- final class ProductsVM {
-     
-     //private var recentsResponse: RecentPhotoResponse? {
-     //     didSet {
-     //         self.changeHandler?(.didFetchRecentPhotos)
-     //     }
-     // }
-     //
-     // var changeHandler: ((RecentPhotosChanges) -> Void)?
-     //
-     // var numberOfRows: Int {
-     //     recentsResponse?.photos?.photo.count ?? .zero
-     // }
-     //
-     // func fetchPhotos() {
-     //     flickrApiProvider.request(.getRecentPhotos) { result in
-     //         switch result {
-     //         case .failure(let error):
-     //             self.changeHandler?(.didErrorOccurred(error))
-     //         case .success(let response):
-     //             do {
-     //                 let recentsResponse = try JSONDecoder().decode(RecentPhotoResponse.self, from: response.data)
-     //                 self.recentsResponse = recentsResponse
-     //             } catch {
-     //                 self.changeHandler?(.didErrorOccurred(error))
-     //             }
-     //         }
-     //     }
-     // }
-     //
-     // func photoForIndexPath(_ indexPath: IndexPath) -> Photo? {
-     //     recentsResponse?.photos?.photo[indexPath.row]
-     // }
+protocol ProductsViewModelProtocol {
+    var delegate: ProductsViewModelDelegate? {get set}
+    func fetchProducts()
+}
 
-     
- }
+final class ProductsVM: ProductsViewModelProtocol {
+    weak var delegate: ProductsViewModelDelegate?
+    
+    private var products = [Product]() {
+        didSet {
+            delegate?.didFetchProducts()
+        }
+    }
+
+    func fetchProducts() {
+        fakeStoreServiceProvider.request(.getProducts) { result in
+            switch result {
+            case.failure(let error):
+                self.delegate?.didErrorOccurred(error)
+            case .success(let response):
+                do {
+                    let products = try JSONDecoder().decode([Product].self, from: response.data)
+                    self.products = products
+                } catch {
+                    self.delegate?.didErrorOccurred(error)
+                }
+            }
+        }
+    }
+  
+}
+

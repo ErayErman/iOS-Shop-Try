@@ -39,6 +39,8 @@
 		848C829E290FFD0B000C4A9D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 848C829D290FFD0B000C4A9D /* FirebaseAuth */; };
 		848C82A0290FFD0B000C4A9D /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 848C829F290FFD0B000C4A9D /* FirebaseDatabaseSwift */; };
 		848C82A2290FFD0B000C4A9D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 848C82A1290FFD0B000C4A9D /* FirebaseFirestoreSwift */; };
+		848FD532291316F5009E76A1 /* Shop_Try_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848FD531291316F5009E76A1 /* Shop_Try_API.framework */; };
+		848FD533291316F5009E76A1 /* Shop_Try_API.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848FD531291316F5009E76A1 /* Shop_Try_API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84C9EC58290EE9E800E03526 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9EC56290EE9E800E03526 /* OnboardingView.swift */; };
 		84C9EC59290EE9E800E03526 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C9EC57290EE9E800E03526 /* OnboardingView.xib */; };
 		84E5B72B290EECF100CBB0B6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */; };
@@ -61,6 +63,20 @@
 			remoteInfo = "Shop&Try";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		848FD534291316F5009E76A1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				848FD533291316F5009E76A1 /* Shop_Try_API.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8446E6F6290A8D03003AED10 /* Shop&Try.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shop&Try.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +111,7 @@
 		848C8292290FF165000C4A9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		848C8293290FF165000C4A9D /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		848C829A290FFAA8000C4A9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		848FD531291316F5009E76A1 /* Shop_Try_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shop_Try_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C9EC56290EE9E800E03526 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		84C9EC57290EE9E800E03526 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +126,7 @@
 				848C82A0290FFD0B000C4A9D /* FirebaseDatabaseSwift in Frameworks */,
 				848C8299290FF829000C4A9D /* IQKeyboardManagerSwift in Frameworks */,
 				848C829E290FFD0B000C4A9D /* FirebaseAuth in Frameworks */,
+				848FD532291316F5009E76A1 /* Shop_Try_API.framework in Frameworks */,
 				848C82A2290FFD0B000C4A9D /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +155,7 @@
 				8446E70F290A8D04003AED10 /* Shop&TryTests */,
 				8446E719290A8D04003AED10 /* Shop&TryUITests */,
 				8446E6F7290A8D03003AED10 /* Products */,
+				848FD530291316F5009E76A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -374,6 +393,14 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		848FD530291316F5009E76A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				848FD531291316F5009E76A1 /* Shop_Try_API.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84C9EC4C290EC9D300E03526 /* Launch Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +481,7 @@
 				8446E6F2290A8D03003AED10 /* Sources */,
 				8446E6F3290A8D03003AED10 /* Frameworks */,
 				8446E6F4290A8D03003AED10 /* Resources */,
+				848FD534291316F5009E76A1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -539,7 +567,6 @@
 			);
 			mainGroup = 8446E6ED290A8D03003AED10;
 			packageReferences = (
-				848C8296290FF4AC000C4A9D /* XCRemoteSwiftPackageReference "Moya" */,
 				848C8297290FF829000C4A9D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				848C829C290FFD0B000C4A9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
@@ -698,7 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -752,7 +779,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -936,14 +963,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		848C8296290FF4AC000C4A9D /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.0;
-			};
-		};
 		848C8297290FF829000C4A9D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";

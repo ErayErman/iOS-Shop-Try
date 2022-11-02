@@ -1,22 +1,25 @@
 import UIKit
 
-class ProductsViewController: CAViewController {
+final class ProductsViewController: CAViewController {
     
     @IBOutlet var collectionView: UICollectionView!
-    private var viewModel : ProductsVM
+    private var viewModel : ProductsViewModelProtocol
 
-    init(viewModel: ProductsVM ) {
+    init(viewModel: ProductsViewModelProtocol ) {
             self.viewModel = viewModel
             super.init(nibName: nil, bundle: nil)
-        }
+    }
         
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+        viewModel.fetchProducts()
+        
         setupUI()
     }
     
@@ -32,7 +35,6 @@ class ProductsViewController: CAViewController {
 }
 
 // MARK: - CollectionView Extension
-
 extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,4 +57,15 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     
     
     
+}
+
+// MARK: - ProductsViewModelDelegate
+extension ProductsViewController : ProductsViewModelDelegate {
+    func didErrorOccurred(_ error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func didFetchProducts() {
+        print("PRODUCTS FETCHED!")
+    }
 }
