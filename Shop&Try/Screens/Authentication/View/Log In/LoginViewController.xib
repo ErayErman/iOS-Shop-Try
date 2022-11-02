@@ -34,14 +34,14 @@
                                     <color key="textColor" systemColor="systemRedColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hfr-R4-hJ5">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="eray@deneme.com" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hfr-R4-hJ5">
                                     <rect key="frame" x="0.0" y="78.333333333333343" width="390" height="68.333333333333343"/>
                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <textInputTraits key="textInputTraits" textContentType="email"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-H7-1Tb">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-H7-1Tb">
                                     <rect key="frame" x="0.0" y="156.66666666666666" width="390" height="68.333333333333343"/>
                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

@@ -1,12 +1,11 @@
 import Foundation
 
-
- enum ProfileInfoChanges {
+ enum ProductsChanges {
      case didErrorOccurred(_ error: Error)
-     case didFetchProfileInfo
+     case didFetchProducts
  }
 
- final class ProfileVM {
+ final class ProductsVM {
      
      //private var recentsResponse: RecentPhotoResponse? {
      //     didSet {
@@ -42,4 +41,3 @@ import Foundation
 
      
  }
-
