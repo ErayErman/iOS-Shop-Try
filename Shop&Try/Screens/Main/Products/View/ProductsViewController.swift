@@ -1,9 +1,10 @@
 import UIKit
+import AlamofireImage
 
 final class ProductsViewController: CAViewController {
     
     @IBOutlet var collectionView: UICollectionView!
-    private var viewModel : ProductsViewModelProtocol
+    var viewModel : ProductsViewModelProtocol
 
     init(viewModel: ProductsViewModelProtocol ) {
             self.viewModel = viewModel
@@ -18,7 +19,7 @@ final class ProductsViewController: CAViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.fetchProducts()
+        //viewModel.fetchProducts()
         
         setupUI()
     }
@@ -38,19 +39,26 @@ final class ProductsViewController: CAViewController {
 extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 5 //viewModel.numberOfRows
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productsCell", for: indexPath) as! ProductsCollectionViewCell
+       // let product = viewModel.productForIndexPath(indexPath)
+       // cell.priceLabel.text = String(describing: product?.price)
+       // cell.productName.text = product?.title
+       // let urlString: String = product?.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
+       // let url = URL(string: urlString)!
+       // cell.image?.af.setImage(withURL: url)
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            
-        let width = self.view.frame.width/2.5
-        let height = self.view.frame.width/3
+        let width = self.view.frame.width
+        let height = self.view.frame.width
            
         return CGSize(width: width, height: height)
     }
@@ -66,6 +74,6 @@ extension ProductsViewController : ProductsViewModelDelegate {
     }
     
     func didFetchProducts() {
-        print("PRODUCTS FETCHED!")
+        collectionView.reloadData()
     }
 }

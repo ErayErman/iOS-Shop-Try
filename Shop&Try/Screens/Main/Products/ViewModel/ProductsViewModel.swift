@@ -8,6 +8,8 @@ protocol ProductsViewModelDelegate: AnyObject {
 
 protocol ProductsViewModelProtocol {
     var delegate: ProductsViewModelDelegate? {get set}
+    var numberOfRows: Int {get}
+    func productForIndexPath(_ indexPath: IndexPath) -> Product?
     func fetchProducts()
 }
 
@@ -18,6 +20,10 @@ final class ProductsVM: ProductsViewModelProtocol {
         didSet {
             delegate?.didFetchProducts()
         }
+    }
+    var numberOfRows: Int {
+        products.count
+        
     }
 
     func fetchProducts() {
@@ -35,6 +41,16 @@ final class ProductsVM: ProductsViewModelProtocol {
             }
         }
     }
+   
+    
+    func productForIndexPath(_ indexPath: IndexPath) -> Product? {
+        products[indexPath.row]
+        
+    }
+    
+    
+
+
   
 }
 

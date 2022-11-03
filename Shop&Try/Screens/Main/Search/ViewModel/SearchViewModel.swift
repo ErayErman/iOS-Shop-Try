@@ -1,44 +1,92 @@
 import Foundation
+import Shop_Try_API
+
+protocol SearchViewModelDelegate: AnyObject {
+    func didErrorOccurred(_ error: Error)
+    func didFetchProducts()
+}
+
+protocol SearchViewModelProtocol {
+    var delegate: SearchViewModelDelegate? {get set}
+    var numberOfRows: Int {get}
+    func productForIndexPath(_ indexPath: IndexPath) -> Product?
+    func fetchProducts()
+}
+
+final class SearchVM: SearchViewModelProtocol {
+    
+    weak var delegate: SearchViewModelDelegate?
+    
+    private var products = [Product]() {
+        didSet {
+            delegate?.didFetchProducts()
+        }
+    }
+    var results = [Product]()
+    
+    var numberOfRows: Int {
+        products.count
+        
+    }
+    
+// MARK: - FETCHING METHODS
+
+    func fetchProducts() {
+        fakeStoreServiceProvider.request(.getProducts) { result in
+            switch result {
+            case.failure(let error):
+                self.delegate?.didErrorOccurred(error)
+            case .success(let response):
+                do {
+                    let products = try JSONDecoder().decode([Product].self, from: response.data)
+                    self.products = products
+                    self.results = products
+                } catch {
+                    self.delegate?.didErrorOccurred(error)
+                }
+            }
+        }
+    }
+    func fetchJewelery() {
+        fakeStoreServiceProvider.request(.getJewelery) { result in
+            switch result {
+            case.failure(let error):
+                self.delegate?.didErrorOccurred(error)
+            case .success(let response):
+                do {
+                    let products = try JSONDecoder().decode([Product].self, from: response.data)
+                    self.products = products
+                } catch {
+                    self.delegate?.didErrorOccurred(error)
+                }
+            }
+        }
+    }
+    func fetchElectronics() {
+        fakeStoreServiceProvider.request(.getElectronics) { result in
+            switch result {
+            case.failure(let error):
+                self.delegate?.didErrorOccurred(error)
+            case .success(let response):
+                do {
+                    let products = try JSONDecoder().decode([Product].self, from: response.data)
+                    self.products = products
+                } catch {
+                    self.delegate?.didErrorOccurred(error)
+                }
+            }
+        }
+    }
+    
+    
+    func productForIndexPath(_ indexPath: IndexPath) -> Product? {
+        products[indexPath.row]
+        
+    }
+    
+    
 
 
- enum SearchProductsChanges {
-     case didErrorOccurred(_ error: Error)
-     case didFetchSearchProducts
- }
+  
+}
 
- final class SearchVM {
-     
-     //private var recentsResponse: RecentPhotoResponse? {
-     //     didSet {
-     //         self.changeHandler?(.didFetchRecentPhotos)
-     //     }
-     // }
-     //
-     // var changeHandler: ((RecentPhotosChanges) -> Void)?
-     //
-     // var numberOfRows: Int {
-     //     recentsResponse?.photos?.photo.count ?? .zero
-     // }
-     //
-     // func fetchPhotos() {
-     //     flickrApiProvider.request(.getRecentPhotos) { result in
-     //         switch result {
-     //         case .failure(let error):
-     //             self.changeHandler?(.didErrorOccurred(error))
-     //         case .success(let response):
-     //             do {
-     //                 let recentsResponse = try JSONDecoder().decode(RecentPhotoResponse.self, from: response.data)
-     //                 self.recentsResponse = recentsResponse
-     //             } catch {
-     //                 self.changeHandler?(.didErrorOccurred(error))
-     //             }
-     //         }
-     //     }
-     // }
-     //
-     // func photoForIndexPath(_ indexPath: IndexPath) -> Photo? {
-     //     recentsResponse?.photos?.photo[indexPath.row]
-     // }
-
-     
- }

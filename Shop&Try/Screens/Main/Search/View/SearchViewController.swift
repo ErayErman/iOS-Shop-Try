@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class SearchViewController: CAViewController {
     
@@ -14,6 +15,11 @@ class SearchViewController: CAViewController {
     @IBOutlet var searchBar: UISearchBar!
     
     private var viewModel : SearchVM
+    
+    // Lists for searching
+    var dataList: [Product] = []
+    var filteredList : [Product] = []
+    
     init(viewModel: SearchVM ) {
             self.viewModel = viewModel
             super.init(nibName: nil, bundle: nil)
@@ -25,6 +31,7 @@ class SearchViewController: CAViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         setupUI()
     }
     private func setupUI() {
@@ -32,28 +39,71 @@ class SearchViewController: CAViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "productsCell")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        //viewModel.fetchProducts()
+        
         
     }
-
+    
+//    @IBAction func didValueChangedSegmentControl(_ sender: Any) {
+//        switch categoryControll.selectedSegmentIndex
+//        {
+//        case 0:
+//            viewModel.fetchProducts()
+//        case 1:
+//            viewModel.fetchElectronics()
+//        case 2:
+//            viewModel.fetchJewelery()
+//
+//        case 3:
+//            viewModel.fetchProducts()
+//
+//        case 4:
+//            viewModel.fetchProducts()
+//
+//        default:
+//            viewModel.fetchProducts()
+//
+//       }
+//   }
+    
 }
 // MARK: - CollectionView Extension
 
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+           return 5 //if !filteredList.isEmpty {return filteredList.count}else {return viewModel.numberOfRows}
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productsCell", for: indexPath) as! ProductsCollectionViewCell
+       // if filteredList.isEmpty {
+       //     let product = viewModel.productForIndexPath(indexPath)
+       //     cell.priceLabel.text = String(describing: product?.price)
+       //     cell.productName.text = product?.title
+       //     let urlString: String = product?.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
+       //     let url = URL(string: urlString)!
+       //     cell.image?.af.setImage(withURL: url)
+       //     return cell
+       //
+       // }else {
+       //     let fData = filteredList[indexPath.row]
+       //     cell.priceLabel.text = String(describing: fData.price)
+       //     cell.productName.text = fData.title
+       //     let urlString: String = fData.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
+       //     let url = URL(string: urlString)!
+       //     cell.image?.af.setImage(withURL: url)
+       //     return cell
+       // }
         return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            
         let width = self.view.frame.width/2.5
-        let height = self.view.frame.width/3
+        let height = self.view.frame.width/2
            
         return CGSize(width: width, height: height)
     }
@@ -65,16 +115,26 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
 // MARK: - Searchbar Extension
 
 extension SearchViewController: UISearchBarDelegate {
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            //self.dataList = viewModel.results
-            //filteredList = dataList.filter {$0.name!.lowercased().contains(searchText.lowercased())}
-            collectionView.reloadData()
-            
-        }
+        self.dataList = viewModel.results
+        filteredList = dataList.filter {$0.title!.lowercased().contains(searchText.lowercased())}
+        collectionView.reloadData()
+        
+    }
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
             self.searchBar.text = ""
             collectionView.reloadData()
         }
 
+}
+// MARK: - SearchViewModelDelegate
+
+extension SearchViewController : SearchViewModelDelegate {
+    func didErrorOccurred(_ error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func didFetchProducts() {
+        collectionView.reloadData()
+    }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842294B52913FBC300386EA4 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 842294B42913FBC300386EA4 /* AlamofireImage */; };
 		8446E6FA290A8D03003AED10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E6F9290A8D03003AED10 /* AppDelegate.swift */; };
 		8446E703290A8D04003AED10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8446E702290A8D04003AED10 /* Assets.xcassets */; };
 		8446E711290A8D04003AED10 /* Shop_TryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E710290A8D04003AED10 /* Shop_TryTests.swift */; };
@@ -128,6 +129,7 @@
 				848C829E290FFD0B000C4A9D /* FirebaseAuth in Frameworks */,
 				848FD532291316F5009E76A1 /* Shop_Try_API.framework in Frameworks */,
 				848C82A2290FFD0B000C4A9D /* FirebaseFirestoreSwift in Frameworks */,
+				842294B52913FBC300386EA4 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +495,7 @@
 				848C829D290FFD0B000C4A9D /* FirebaseAuth */,
 				848C829F290FFD0B000C4A9D /* FirebaseDatabaseSwift */,
 				848C82A1290FFD0B000C4A9D /* FirebaseFirestoreSwift */,
+				842294B42913FBC300386EA4 /* AlamofireImage */,
 			);
 			productName = "Shop&Try";
 			productReference = 8446E6F6290A8D03003AED10 /* Shop&Try.app */;
@@ -569,6 +572,7 @@
 			packageReferences = (
 				848C8297290FF829000C4A9D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				848C829C290FFD0B000C4A9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				842294B32913FBC300386EA4 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 8446E6F7290A8D03003AED10 /* Products */;
 			projectDirPath = "";
@@ -963,6 +967,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		842294B32913FBC300386EA4 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		848C8297290FF829000C4A9D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -982,6 +994,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		842294B42913FBC300386EA4 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 842294B32913FBC300386EA4 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
 		848C8298290FF829000C4A9D /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 848C8297290FF829000C4A9D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
