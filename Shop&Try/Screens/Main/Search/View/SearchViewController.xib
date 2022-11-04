@@ -22,8 +22,8 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" placeholder="Find product" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ARm-jh-BrX">
-                    <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                <searchBar contentMode="redraw" placeholder="Find product" translatesAutoresizingMaskIntoConstraints="NO" id="ARm-jh-BrX">
+                    <rect key="frame" x="0.0" y="47" width="390" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                     <scopeButtonTitles>
                         <string>Title</string>
@@ -34,7 +34,7 @@
                     </connections>
                 </searchBar>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ugs-hb-7ga">
-                    <rect key="frame" x="0.0" y="76" width="390" height="32"/>
+                    <rect key="frame" x="0.0" y="123" width="390" height="32"/>
                     <segments>
                         <segment title="All"/>
                         <segment title="Electronics"/>
@@ -47,7 +47,7 @@
                     </connections>
                 </segmentedControl>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="doh-hF-lET">
-                    <rect key="frame" x="0.0" y="122" width="390" height="722"/>
+                    <rect key="frame" x="0.0" y="169" width="390" height="641"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yNq-bY-9lR">
                         <size key="itemSize" width="128" height="128"/>

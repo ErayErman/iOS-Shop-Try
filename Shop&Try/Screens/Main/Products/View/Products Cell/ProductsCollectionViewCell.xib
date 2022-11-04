@@ -26,8 +26,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="arrow.up.bin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Brt-OE-LKA">
-                        <rect key="frame" x="0.0" y="1.6666666666666572" width="381" height="299"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Brt-OE-LKA">
+                        <rect key="frame" x="0.0" y="0.0" width="381" height="302"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uw4-NQ-Osj">
                         <rect key="frame" x="0.0" y="352" width="381" height="20"/>
@@ -63,7 +63,4 @@
             <point key="canvasLocation" x="456.15384615384613" y="138.6255924170616"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="arrow.up.bin" catalog="system" width="128" height="92"/>
-    </resources>
 </document>

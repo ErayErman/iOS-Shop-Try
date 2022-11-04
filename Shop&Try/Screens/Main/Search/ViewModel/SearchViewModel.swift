@@ -77,7 +77,36 @@ final class SearchVM: SearchViewModelProtocol {
             }
         }
     }
-    
+    func fetchWomens() {
+        fakeStoreServiceProvider.request(.womensC) { result in
+            switch result {
+            case.failure(let error):
+                self.delegate?.didErrorOccurred(error)
+            case .success(let response):
+                do {
+                    let products = try JSONDecoder().decode([Product].self, from: response.data)
+                    self.products = products
+                } catch {
+                    self.delegate?.didErrorOccurred(error)
+                }
+            }
+        }
+    }
+    func fetchMens() {
+        fakeStoreServiceProvider.request(.mensC) { result in
+            switch result {
+            case.failure(let error):
+                self.delegate?.didErrorOccurred(error)
+            case .success(let response):
+                do {
+                    let products = try JSONDecoder().decode([Product].self, from: response.data)
+                    self.products = products
+                } catch {
+                    self.delegate?.didErrorOccurred(error)
+                }
+            }
+        }
+    }
     
     func productForIndexPath(_ indexPath: IndexPath) -> Product? {
         products[indexPath.row]

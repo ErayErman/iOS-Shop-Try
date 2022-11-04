@@ -39,32 +39,32 @@ class SearchViewController: CAViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "productsCell")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        //viewModel.fetchProducts()
+        viewModel.fetchProducts()
         
         
     }
     
-//    @IBAction func didValueChangedSegmentControl(_ sender: Any) {
-//        switch categoryControll.selectedSegmentIndex
-//        {
-//        case 0:
-//            viewModel.fetchProducts()
-//        case 1:
-//            viewModel.fetchElectronics()
-//        case 2:
-//            viewModel.fetchJewelery()
-//
-//        case 3:
-//            viewModel.fetchProducts()
-//
-//        case 4:
-//            viewModel.fetchProducts()
-//
-//        default:
-//            viewModel.fetchProducts()
-//
-//       }
-//   }
+   @IBAction func didValueChangedSegmentControl(_ sender: Any) {
+       switch categoryControll.selectedSegmentIndex
+       {
+       case 0:
+           viewModel.fetchProducts()
+       case 1:
+           viewModel.fetchElectronics()
+       case 2:
+           viewModel.fetchJewelery()
+ 
+       case 3:
+           viewModel.fetchMens()
+ 
+       case 4:
+           viewModel.fetchWomens()
+ 
+       default:
+           viewModel.fetchProducts()
+ 
+     }
+  }
     
 }
 // MARK: - CollectionView Extension
@@ -72,31 +72,27 @@ class SearchViewController: CAViewController {
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           return 5 //if !filteredList.isEmpty {return filteredList.count}else {return viewModel.numberOfRows}
+          if !filteredList.isEmpty {return filteredList.count}else {return viewModel.numberOfRows}
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productsCell", for: indexPath) as! ProductsCollectionViewCell
-       // if filteredList.isEmpty {
-       //     let product = viewModel.productForIndexPath(indexPath)
-       //     cell.priceLabel.text = String(describing: product?.price)
-       //     cell.productName.text = product?.title
-       //     let urlString: String = product?.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
-       //     let url = URL(string: urlString)!
-       //     cell.image?.af.setImage(withURL: url)
-       //     return cell
-       //
-       // }else {
-       //     let fData = filteredList[indexPath.row]
-       //     cell.priceLabel.text = String(describing: fData.price)
-       //     cell.productName.text = fData.title
-       //     let urlString: String = fData.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
-       //     let url = URL(string: urlString)!
-       //     cell.image?.af.setImage(withURL: url)
-       //     return cell
-       // }
+        let product: Product
+        
+        if filteredList.isEmpty {
+            product = viewModel.productForIndexPath(indexPath)!
+        }else {
+            product = filteredList[indexPath.row]
+        }
+            
+        cell.priceLabel.text = "\(product.price ?? 0)"
+        cell.productName.text = product.title
+        let urlString: String = product.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
+        let url = URL(string: urlString)!
+        cell.image?.af.setImage(withURL: url)
         return cell
+ 
         
     }
     
@@ -108,6 +104,18 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         return CGSize(width: width, height: height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ProductDetailsViewController()
+        let product: Product
+        if filteredList.isEmpty {
+            product = viewModel.productForIndexPath(indexPath)!
+        }else {
+            product = filteredList[indexPath.row]
+        }
+        let vm = ProductDetailsViewModel.init(product)
+        vc.productDetailsViewModel = vm
+        navigationController?.present(vc, animated: true)
+    }
     
     
 }
@@ -121,10 +129,6 @@ extension SearchViewController: UISearchBarDelegate {
         collectionView.reloadData()
         
     }
-        func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-            self.searchBar.text = ""
-            collectionView.reloadData()
-        }
 
 }
 // MARK: - SearchViewModelDelegate

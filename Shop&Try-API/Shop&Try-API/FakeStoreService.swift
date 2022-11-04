@@ -26,9 +26,9 @@ extension FakeStoreService: TargetType {
         case .getJewelery:
             return "/products/category/jewelery"
         case .mensC:
-            return "/products"
+            return "/products/category/men's clothing"
         case .womensC:
-            return "/products"
+            return "/products/category/women's clothing"
         }
     }
     
