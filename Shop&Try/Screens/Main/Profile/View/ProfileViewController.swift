@@ -9,15 +9,15 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet var basketButton: UIButton!
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var phoneLabel: UILabel!
     @IBOutlet var mailLabel: UILabel!
-    @IBOutlet var basketButton: UIButton!
     @IBOutlet var signOutButton: UIButton!
     
-    private var viewModel : ProfileVM
+    private var viewModel : ProfileViewModel
 
-    init(viewModel: ProfileVM ) {
+    init(viewModel: ProfileViewModel ) {
             self.viewModel = viewModel
             super.init(nibName: nil, bundle: nil)
         }
@@ -30,9 +30,13 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
     }
-
-    @IBAction func didClickedBasketButton(_ sender: Any) {
+    
+    @IBAction func showBasket(_ sender: Any) {
+        let vm = BasketViewModel()
+        let vc = BasketViewController(viewModel: vm)
+        navigationController?.present(vc, animated: true)
     }
+    
     
     @IBAction func didClickedSignOut(_ sender: Any) {
         let autVC = AuthViewController()

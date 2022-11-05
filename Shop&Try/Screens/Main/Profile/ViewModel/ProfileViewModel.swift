@@ -6,7 +6,7 @@ import Foundation
      case didFetchProfileInfo
  }
 
- final class ProfileVM {
+ final class ProfileViewModel {
      
      //private var recentsResponse: RecentPhotoResponse? {
      //     didSet {

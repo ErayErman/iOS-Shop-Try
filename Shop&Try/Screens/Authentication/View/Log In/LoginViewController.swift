@@ -52,26 +52,28 @@ class LoginViewController: CAViewController {
             productsViewController.tabBarItem.image = UIImage(named: "house")
             productsViewController.tabBarItem.selectedImage = UIImage(named: "house_fill")
 
-            
             let searchViewModel = SearchVM()
             let searchViewController = SearchViewController(viewModel: searchViewModel)
             searchViewController.title = "Search"
             searchViewController.tabBarItem.image = UIImage(named: "Magnifyingglass Circle")
             searchViewController.tabBarItem.selectedImage = UIImage(named: "Magnifyingglass Circle_Fill")
             
-            let profileViewModel = ProfileVM()
+            let profileViewModel = ProfileViewModel()
             let profileViewController = ProfileViewController(viewModel: profileViewModel)
             profileViewController.title = "Profile"
             profileViewController.tabBarItem.image = UIImage(named: "PersonCropSquare")
             profileViewController.tabBarItem.selectedImage = UIImage(named: "PersonCropSquare_Fill")
             
             let tabBarController = UITabBarController()
-            tabBarController.viewControllers = [productsViewController, searchViewController,profileViewController]
+            tabBarController.viewControllers = [productsViewController, searchViewController, profileViewController]
             tabBarController.navigationItem.hidesBackButton = true
             self.navigationController?.pushViewController(tabBarController, animated: true)
             
+            
         })
         
+        
     }
+    
     
 }

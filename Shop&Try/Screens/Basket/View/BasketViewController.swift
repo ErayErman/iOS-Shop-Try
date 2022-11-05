@@ -11,6 +11,16 @@ class BasketViewController: UIViewController {
 
     @IBOutlet var paymentButton: UIButton!
     @IBOutlet var tableView: UITableView!
+    private var viewModel: BasketViewModel
+    
+    init(viewModel: BasketViewModel ) {
+            self.viewModel = viewModel
+            super.init(nibName: nil, bundle: nil)
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()

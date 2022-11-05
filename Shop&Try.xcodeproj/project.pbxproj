@@ -49,6 +49,7 @@
 		848C82A2290FFD0B000C4A9D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 848C82A1290FFD0B000C4A9D /* FirebaseFirestoreSwift */; };
 		848FD532291316F5009E76A1 /* Shop_Try_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848FD531291316F5009E76A1 /* Shop_Try_API.framework */; };
 		848FD533291316F5009E76A1 /* Shop_Try_API.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848FD531291316F5009E76A1 /* Shop_Try_API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8496F3B72916587E008CEF6B /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F3B62916587E008CEF6B /* BasketViewModel.swift */; };
 		84C9EC58290EE9E800E03526 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9EC56290EE9E800E03526 /* OnboardingView.swift */; };
 		84C9EC59290EE9E800E03526 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C9EC57290EE9E800E03526 /* OnboardingView.xib */; };
 		84E5B72B290EECF100CBB0B6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */; };
@@ -127,6 +128,7 @@
 		848C8293290FF165000C4A9D /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		848C829A290FFAA8000C4A9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		848FD531291316F5009E76A1 /* Shop_Try_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shop_Try_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8496F3B62916587E008CEF6B /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
 		84C9EC56290EE9E800E03526 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		84C9EC57290EE9E800E03526 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 		8478656C29151F22004676FF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8496F3B62916587E008CEF6B /* BasketViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				848C8294290FF165000C4A9D /* LoginViewController.swift in Sources */,
 				84895B2229153C68008C502D /* ProductDetailsViewModel.swift in Sources */,
 				845659F52912852000FAB660 /* ProductsViewModel.swift in Sources */,
+				8496F3B72916587E008CEF6B /* BasketViewModel.swift in Sources */,
 				8478657D2915318D004676FF /* ProductDetailsViewController.swift in Sources */,
 				845659F029127FD200FAB660 /* ProductsViewController.swift in Sources */,
 				845659E429113EF700FAB660 /* ProfileViewController.swift in Sources */,

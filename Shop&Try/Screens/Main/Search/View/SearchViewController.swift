@@ -10,10 +10,10 @@ import AlamofireImage
 
 class SearchViewController: CAViewController {
     
+    @IBOutlet var basketButton: UIButton!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var categoryControll: UISegmentedControl!
     @IBOutlet var searchBar: UISearchBar!
-    
     private var viewModel : SearchVM
     
     // Lists for searching
@@ -39,32 +39,39 @@ class SearchViewController: CAViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "productsCell")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        viewModel.fetchProducts()
+        
+        //viewModel.fetchProducts()
         
         
     }
     
-   @IBAction func didValueChangedSegmentControl(_ sender: Any) {
-       switch categoryControll.selectedSegmentIndex
-       {
-       case 0:
-           viewModel.fetchProducts()
-       case 1:
-           viewModel.fetchElectronics()
-       case 2:
-           viewModel.fetchJewelery()
- 
-       case 3:
-           viewModel.fetchMens()
- 
-       case 4:
-           viewModel.fetchWomens()
- 
-       default:
-           viewModel.fetchProducts()
- 
-     }
-  }
+    @IBAction func showBasket(_ sender: Any) {
+        let vm = BasketViewModel()
+        let vc = BasketViewController(viewModel: vm)
+        navigationController?.present(vc, animated: true)
+    }
+    
+//   @IBAction func didValueChangedSegmentControl(_ sender: Any) {
+//       switch categoryControll.selectedSegmentIndex
+//       {
+//       case 0:
+//           viewModel.fetchProducts()
+//       case 1:
+//           viewModel.fetchElectronics()
+//       case 2:
+//           viewModel.fetchJewelery()
+//
+//       case 3:
+//           viewModel.fetchMens()
+//
+//       case 4:
+//           viewModel.fetchWomens()
+//
+//       default:
+//           viewModel.fetchProducts()
+//
+//     }
+//  }
     
 }
 // MARK: - CollectionView Extension
@@ -72,25 +79,25 @@ class SearchViewController: CAViewController {
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          if !filteredList.isEmpty {return filteredList.count}else {return viewModel.numberOfRows}
+          return 5 //if !filteredList.isEmpty {return filteredList.count}else {return viewModel.numberOfRows}
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productsCell", for: indexPath) as! ProductsCollectionViewCell
         let product: Product
-        
-        if filteredList.isEmpty {
-            product = viewModel.productForIndexPath(indexPath)!
-        }else {
-            product = filteredList[indexPath.row]
-        }
-            
-        cell.priceLabel.text = "\(product.price ?? 0)"
-        cell.productName.text = product.title
-        let urlString: String = product.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
-        let url = URL(string: urlString)!
-        cell.image?.af.setImage(withURL: url)
+       //
+       // if filteredList.isEmpty {
+       //     product = viewModel.productForIndexPath(indexPath)!
+       // }else {
+       //     product = filteredList[indexPath.row]
+       // }
+       //
+       // cell.priceLabel.text = "\(product.price ?? 0)"
+       // cell.productName.text = product.title
+       // let urlString: String = product.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
+       // let url = URL(string: urlString)!
+       // cell.image?.af.setImage(withURL: url)
         return cell
  
         

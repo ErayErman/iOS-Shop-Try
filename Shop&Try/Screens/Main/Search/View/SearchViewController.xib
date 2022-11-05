@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="Shop_Try" customModuleProvider="target">
             <connections>
+                <outlet property="basketButton" destination="qEp-xY-Q6Q" id="9TX-d8-9zG"/>
                 <outlet property="categoryControll" destination="Ugs-hb-7ga" id="0WP-js-dr5"/>
                 <outlet property="collectionView" destination="doh-hF-lET" id="i3S-FP-G3r"/>
                 <outlet property="searchBar" destination="ARm-jh-BrX" id="KVK-Iz-XZ1"/>
@@ -23,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <searchBar contentMode="redraw" placeholder="Find product" translatesAutoresizingMaskIntoConstraints="NO" id="ARm-jh-BrX">
-                    <rect key="frame" x="0.0" y="47" width="390" height="56"/>
+                    <rect key="frame" x="0.0" y="97" width="390" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                     <scopeButtonTitles>
                         <string>Title</string>
@@ -34,7 +35,7 @@
                     </connections>
                 </searchBar>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ugs-hb-7ga">
-                    <rect key="frame" x="0.0" y="123" width="390" height="32"/>
+                    <rect key="frame" x="0.0" y="163" width="390" height="32"/>
                     <segments>
                         <segment title="All"/>
                         <segment title="Electronics"/>
@@ -47,7 +48,7 @@
                     </connections>
                 </segmentedControl>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="doh-hF-lET">
-                    <rect key="frame" x="0.0" y="169" width="390" height="641"/>
+                    <rect key="frame" x="0.0" y="209" width="390" height="601"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yNq-bY-9lR">
                         <size key="itemSize" width="128" height="128"/>
@@ -56,17 +57,31 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEp-xY-Q6Q">
+                    <rect key="frame" x="280" y="47" width="110" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="9o0-Mq-krK"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemMintColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="basket.fill" title="Basket"/>
+                    <connections>
+                        <action selector="showBasket:" destination="-1" eventType="touchUpInside" id="JvK-yI-0ry"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="ARm-jh-BrX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Cut-ce-Dso"/>
+                <constraint firstItem="ARm-jh-BrX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="Cut-ce-Dso"/>
                 <constraint firstItem="Ugs-hb-7ga" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ihr-cQ-jc0"/>
+                <constraint firstItem="qEp-xY-Q6Q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="J9d-No-5sE"/>
                 <constraint firstItem="doh-hF-lET" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NFX-kS-2mZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="doh-hF-lET" secondAttribute="bottom" id="QM5-Fe-oDN"/>
                 <constraint firstItem="Ugs-hb-7ga" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xl6-aC-rS0"/>
-                <constraint firstItem="Ugs-hb-7ga" firstAttribute="top" secondItem="ARm-jh-BrX" secondAttribute="bottom" constant="20" id="dW7-Zo-8it"/>
+                <constraint firstItem="Ugs-hb-7ga" firstAttribute="top" secondItem="ARm-jh-BrX" secondAttribute="bottom" constant="10" id="dW7-Zo-8it"/>
                 <constraint firstItem="ARm-jh-BrX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dfM-jV-6Eo"/>
+                <constraint firstItem="qEp-xY-Q6Q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fEL-xe-1rW"/>
                 <constraint firstItem="ARm-jh-BrX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hMH-ym-ZtI"/>
                 <constraint firstItem="doh-hF-lET" firstAttribute="top" secondItem="Ugs-hb-7ga" secondAttribute="bottom" constant="15" id="nIt-RH-7Ff"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="doh-hF-lET" secondAttribute="trailing" id="uDQ-cj-gbO"/>
@@ -75,8 +90,12 @@
         </view>
     </objects>
     <resources>
+        <image name="basket.fill" width="34.333332061767578" height="32.666667938232422"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

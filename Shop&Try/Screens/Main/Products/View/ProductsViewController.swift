@@ -3,6 +3,7 @@ import AlamofireImage
 
 final class ProductsViewController: CAViewController {
     
+    @IBOutlet var basketButton: UIButton!
     @IBOutlet var collectionView: UICollectionView!
     var viewModel : ProductsViewModelProtocol
 
@@ -19,7 +20,7 @@ final class ProductsViewController: CAViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.fetchProducts()
+        //viewModel.fetchProducts()
         
         setupUI()
     }
@@ -29,9 +30,14 @@ final class ProductsViewController: CAViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "productsCell")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        
     }
-
-
+    @IBAction func showBasket(_ sender: Any) {
+        let vm = BasketViewModel()
+        let vc = BasketViewController(viewModel: vm)
+        navigationController?.present(vc, animated: true)
+    }
+    
 
 }
 
@@ -39,18 +45,18 @@ final class ProductsViewController: CAViewController {
 extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfRows
+        return 5 //viewModel.numberOfRows
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productsCell", for: indexPath) as! ProductsCollectionViewCell
-        let product = viewModel.productForIndexPath(indexPath)
-        cell.priceLabel.text = "\(product?.price ?? 0)"
-        cell.productName.text = product?.title
-        let urlString: String = product?.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
-        let url = URL(string: urlString)!
-        cell.image?.af.setImage(withURL: url)
+      //  let product = viewModel.productForIndexPath(indexPath)
+      //  cell.priceLabel.text = "\(product?.price ?? 0)"
+      //  cell.productName.text = product?.title
+      //  let urlString: String = product?.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
+      //  let url = URL(string: urlString)!
+      //  cell.image?.af.setImage(withURL: url)
 
         return cell
     }
