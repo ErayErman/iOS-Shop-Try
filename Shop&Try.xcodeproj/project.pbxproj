@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		842294B52913FBC300386EA4 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 842294B42913FBC300386EA4 /* AlamofireImage */; };
+		8423BACC291709B5002C6141 /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423BACB291709B5002C6141 /* Encodable+Extensions.swift */; };
 		8446E6FA290A8D03003AED10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E6F9290A8D03003AED10 /* AppDelegate.swift */; };
 		8446E703290A8D04003AED10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8446E702290A8D04003AED10 /* Assets.xcassets */; };
 		8446E711290A8D04003AED10 /* Shop_TryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E710290A8D04003AED10 /* Shop_TryTests.swift */; };
@@ -50,6 +51,7 @@
 		848FD532291316F5009E76A1 /* Shop_Try_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848FD531291316F5009E76A1 /* Shop_Try_API.framework */; };
 		848FD533291316F5009E76A1 /* Shop_Try_API.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848FD531291316F5009E76A1 /* Shop_Try_API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8496F3B72916587E008CEF6B /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F3B62916587E008CEF6B /* BasketViewModel.swift */; };
+		8496F3BA29169EFB008CEF6B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F3B929169EFB008CEF6B /* ProfileModel.swift */; };
 		84C9EC58290EE9E800E03526 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9EC56290EE9E800E03526 /* OnboardingView.swift */; };
 		84C9EC59290EE9E800E03526 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C9EC57290EE9E800E03526 /* OnboardingView.xib */; };
 		84E5B72B290EECF100CBB0B6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */; };
@@ -88,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8423BACB291709B5002C6141 /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		8446E6F6290A8D03003AED10 /* Shop&Try.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shop&Try.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8446E6F9290A8D03003AED10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8446E702290A8D04003AED10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 		848C829A290FFAA8000C4A9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		848FD531291316F5009E76A1 /* Shop_Try_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shop_Try_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8496F3B62916587E008CEF6B /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
+		8496F3B929169EFB008CEF6B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		84C9EC56290EE9E800E03526 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		84C9EC57290EE9E800E03526 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,14 @@
 				84786566291519AB004676FF /* View */,
 			);
 			path = "Product Details";
+			sourceTree = "<group>";
+		};
+		8423BACA29170995002C6141 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8423BACB291709B5002C6141 /* Encodable+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8446E6ED290A8D03003AED10 = {
@@ -267,6 +279,7 @@
 		845659D029111C5900FAB660 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8423BACA29170995002C6141 /* Extensions */,
 				845659D22911204D00FAB660 /* Helpers */,
 				845659D129111C6100FAB660 /* CAKit */,
 			);
@@ -310,6 +323,7 @@
 		845659D929113A1D00FAB660 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8496F3B829169EE0008CEF6B /* Model */,
 				845659DB29113A5200FAB660 /* View */,
 				845659DA29113A4300FAB660 /* ViewModel */,
 			);
@@ -481,6 +495,14 @@
 				848FD531291316F5009E76A1 /* Shop_Try_API.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8496F3B829169EE0008CEF6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8496F3B929169EFB008CEF6B /* ProfileModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		84C9EC4C290EC9D300E03526 /* Launch Screen */ = {
@@ -722,12 +744,14 @@
 				845659F3291284C600FAB660 /* SearchViewModel.swift in Sources */,
 				845659CE29111B6F00FAB660 /* AuthViewModel.swift in Sources */,
 				8446E6FA290A8D03003AED10 /* AppDelegate.swift in Sources */,
+				8423BACC291709B5002C6141 /* Encodable+Extensions.swift in Sources */,
 				845659E92912764500FAB660 /* ProductModel.swift in Sources */,
 				845659EC2912791900FAB660 /* SearchViewController.swift in Sources */,
 				8478657529152DF8004676FF /* BasketTableViewCell.swift in Sources */,
 				845659E729113F1600FAB660 /* ProfileViewModel.swift in Sources */,
 				8478657029151F72004676FF /* BasketViewController.swift in Sources */,
 				845659F929128DFE00FAB660 /* ProductsCollectionViewCell.swift in Sources */,
+				8496F3BA29169EFB008CEF6B /* ProfileModel.swift in Sources */,
 				84E5B72B290EECF100CBB0B6 /* OnboardingViewController.swift in Sources */,
 				845659D42911206600FAB660 /* AlertPresentable.swift in Sources */,
 				848C8290290FF142000C4A9D /* SignUpViewController.swift in Sources */,

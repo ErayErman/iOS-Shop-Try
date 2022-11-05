@@ -45,10 +45,14 @@ class SignUpViewController: CAViewController {
 
     @IBAction func didClickedSignUp(_ sender: Any) {
         guard let credential = credentionTextField.text,
-              let password = passwordTextField.text else {
+              let password = passwordTextField.text,
+              let username = nameTextField.text,
+              let number = numberTextField.text else {
             return
         }
+        let favs = [[String:String]]()
         viewModel.signUp(email: credential, password: password)
+        viewModel.writeData(username: username, email: credential, number: number, favs: favs)
         
     }
     

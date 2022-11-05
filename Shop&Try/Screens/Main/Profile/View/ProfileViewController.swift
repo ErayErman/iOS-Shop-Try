@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class ProfileViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet var signOutButton: UIButton!
     
     private var viewModel : ProfileViewModel
+    private let database = Firestore.firestore()
+
 
     init(viewModel: ProfileViewModel ) {
             self.viewModel = viewModel
@@ -26,11 +29,30 @@ class ProfileViewController: UIViewController {
             fatalError("init(coder:) has not been implemented")
         }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getData()
     }
     
+    func getData(){
+        let docRef = database.collection("shop-try/users/user").document(viewModel.email)
+        
+        docRef.addSnapshotListener { (documentSnapshot, error) in
+            guard let document = documentSnapshot else {
+                print("Error fetching document: \(error!)")
+                return
+            }
+            guard let data = document.data() else {
+                print("Document data was empty.")
+                return
+            }
+            self.mailLabel.text = self.viewModel.email
+            self.usernameLabel.text = data["username"] as? String
+            self.phoneLabel.text = data["number"] as? String
+            
+        }
+    }
     @IBAction func showBasket(_ sender: Any) {
         let vm = BasketViewModel()
         let vc = BasketViewController(viewModel: vm)

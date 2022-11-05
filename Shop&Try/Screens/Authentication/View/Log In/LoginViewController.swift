@@ -8,7 +8,6 @@
 import UIKit
 import FirebaseAuth
 
-
 class LoginViewController: CAViewController {
     
     @IBOutlet var credentionTextField: UITextField!
@@ -16,7 +15,6 @@ class LoginViewController: CAViewController {
     @IBOutlet var loginButton: UIButton!
     
     private let viewModel: AuthViewModel
-    
     
     // MARK: - Init
     init(viewModel: AuthViewModel) {
@@ -58,7 +56,7 @@ class LoginViewController: CAViewController {
             searchViewController.tabBarItem.image = UIImage(named: "Magnifyingglass Circle")
             searchViewController.tabBarItem.selectedImage = UIImage(named: "Magnifyingglass Circle_Fill")
             
-            let profileViewModel = ProfileViewModel()
+            let profileViewModel = ProfileViewModel(credential)
             let profileViewController = ProfileViewController(viewModel: profileViewModel)
             profileViewController.title = "Profile"
             profileViewController.tabBarItem.image = UIImage(named: "PersonCropSquare")
@@ -70,8 +68,8 @@ class LoginViewController: CAViewController {
             self.navigationController?.pushViewController(tabBarController, animated: true)
             
             
+            
         })
-        
         
     }
     
