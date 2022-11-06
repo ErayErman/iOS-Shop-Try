@@ -11,11 +11,18 @@ protocol SearchViewModelProtocol {
     var numberOfRows: Int {get}
     func productForIndexPath(_ indexPath: IndexPath) -> Product?
     func fetchProducts()
+    var email: String {get}
 }
 
 final class SearchVM: SearchViewModelProtocol {
     
     weak var delegate: SearchViewModelDelegate?
+    
+    let email: String
+
+    init(_ email: String) {
+        self.email = email
+    }
     
     private var products = [Product]() {
         didSet {

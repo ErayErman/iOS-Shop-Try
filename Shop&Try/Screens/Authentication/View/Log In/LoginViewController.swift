@@ -42,7 +42,7 @@ class LoginViewController: CAViewController {
         viewModel.signIn(email: credential,password: password,completion: { [weak self] in
             guard let self = self else { return }
             
-            let productsViewModel = ProductsVM()
+            let productsViewModel = ProductsVM(credential)
             let productsViewController = ProductsViewController(viewModel: productsViewModel)
                             
             productsViewController.title = "Products"
@@ -50,7 +50,7 @@ class LoginViewController: CAViewController {
             productsViewController.tabBarItem.image = UIImage(named: "house")
             productsViewController.tabBarItem.selectedImage = UIImage(named: "house_fill")
 
-            let searchViewModel = SearchVM()
+            let searchViewModel = SearchVM(credential)
             let searchViewController = SearchViewController(viewModel: searchViewModel)
             searchViewController.title = "Search"
             searchViewController.tabBarItem.image = UIImage(named: "Magnifyingglass Circle")

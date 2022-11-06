@@ -20,7 +20,7 @@ final class ProductsViewController: CAViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        //viewModel.fetchProducts()
+        viewModel.fetchProducts()
         
         setupUI()
     }
@@ -33,7 +33,7 @@ final class ProductsViewController: CAViewController {
         
     }
     @IBAction func showBasket(_ sender: Any) {
-        let vm = BasketViewModel()
+        let vm = BasketViewModel(viewModel.email)
         let vc = BasketViewController(viewModel: vm)
         navigationController?.present(vc, animated: true)
     }
@@ -45,18 +45,18 @@ final class ProductsViewController: CAViewController {
 extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5 //viewModel.numberOfRows
+        return viewModel.numberOfRows
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productsCell", for: indexPath) as! ProductsCollectionViewCell
-      //  let product = viewModel.productForIndexPath(indexPath)
-      //  cell.priceLabel.text = "\(product?.price ?? 0)"
-      //  cell.productName.text = product?.title
-      //  let urlString: String = product?.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
-      //  let url = URL(string: urlString)!
-      //  cell.image?.af.setImage(withURL: url)
+       let product = viewModel.productForIndexPath(indexPath)
+       cell.priceLabel.text = "\(product?.price ?? 0)"
+       cell.productName.text = product?.title
+       let urlString: String = product?.image ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
+       let url = URL(string: urlString)!
+       cell.image?.af.setImage(withURL: url)
 
         return cell
     }
@@ -72,7 +72,7 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = ProductDetailsViewController()
         let product = viewModel.productForIndexPath(indexPath)!
-        let vm = ProductDetailsViewModel.init(product)
+        let vm = ProductDetailsViewModel.init(results: product, email: viewModel.email)
         vc.productDetailsViewModel = vm
         navigationController?.present(vc, animated: true)
     }

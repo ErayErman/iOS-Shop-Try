@@ -54,7 +54,7 @@ class ProfileViewController: UIViewController {
         }
     }
     @IBAction func showBasket(_ sender: Any) {
-        let vm = BasketViewModel()
+        let vm = BasketViewModel(viewModel.email)
         let vc = BasketViewController(viewModel: vm)
         navigationController?.present(vc, animated: true)
     }

@@ -11,10 +11,18 @@ protocol ProductsViewModelProtocol {
     var numberOfRows: Int {get}
     func productForIndexPath(_ indexPath: IndexPath) -> Product?
     func fetchProducts()
+    var email: String {get}
+    
 }
 
 final class ProductsVM: ProductsViewModelProtocol {
     weak var delegate: ProductsViewModelDelegate?
+    
+    let email: String
+
+    init(_ email: String) {
+        self.email = email
+    }
     
     private var products = [Product]() {
         didSet {
@@ -25,6 +33,7 @@ final class ProductsVM: ProductsViewModelProtocol {
         products.count
         
     }
+    
 
     func fetchProducts() {
         fakeStoreServiceProvider.request(.getProducts) { result in

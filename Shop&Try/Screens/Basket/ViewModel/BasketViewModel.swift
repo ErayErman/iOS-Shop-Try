@@ -9,5 +9,10 @@ import Foundation
 
 final class BasketViewModel {
     
+    let email: String
+   
+    init(_ email: String) {
+        self.email = email
+    }
     
 }

@@ -11,9 +11,11 @@ import FirebaseFirestore
 final class ProductDetailsViewModel{
     
     let results: Product
+    let email: String
         
-        init(_ results: Product) {
+    init(results: Product, email: String) {
             self.results = results
+            self.email = email
         }
     
   //  func addBasket() {

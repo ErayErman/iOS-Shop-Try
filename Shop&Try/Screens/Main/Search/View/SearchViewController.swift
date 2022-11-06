@@ -46,7 +46,7 @@ class SearchViewController: CAViewController {
     }
     
     @IBAction func showBasket(_ sender: Any) {
-        let vm = BasketViewModel()
+        let vm = BasketViewModel(viewModel.email)
         let vc = BasketViewController(viewModel: vm)
         navigationController?.present(vc, animated: true)
     }
@@ -119,7 +119,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         }else {
             product = filteredList[indexPath.row]
         }
-        let vm = ProductDetailsViewModel.init(product)
+        let vm = ProductDetailsViewModel.init(results: product, email: viewModel.email)
         vc.productDetailsViewModel = vm
         navigationController?.present(vc, animated: true)
     }
