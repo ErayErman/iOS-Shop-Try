@@ -67,19 +67,6 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
-            -> UISwipeActionsConfiguration? {
-            let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
-                // delete the item here
-                completionHandler(true)
-            }
-            deleteAction.title = "Delete"
-            deleteAction.backgroundColor = .systemRed
-            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
-            
-            return configuration
-    }
 
 }
 
