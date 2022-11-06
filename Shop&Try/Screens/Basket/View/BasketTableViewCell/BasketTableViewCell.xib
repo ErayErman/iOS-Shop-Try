@@ -46,6 +46,9 @@
                                     </label>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="aPb-TJ-oWi">
                                         <rect key="frame" x="0.0" y="44" width="108.33333333333333" height="44"/>
+                                        <connections>
+                                            <action selector="stepperChange:" destination="KGk-i7-Jjw" eventType="valueChanged" id="2Jz-bX-nwJ"/>
+                                        </connections>
                                     </stepper>
                                 </subviews>
                             </stackView>
@@ -60,6 +63,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="priceLabel" destination="dMh-NJ-Slq" id="w1t-cL-yrN"/>
+                <outlet property="productImage" destination="RAr-Wj-p6n" id="yg3-b8-Vtz"/>
+                <outlet property="productLabel" destination="bCD-NF-Tmp" id="zoL-4J-tUA"/>
+                <outlet property="stepperControl" destination="aPb-TJ-oWi" id="Mcj-mk-mG5"/>
+                <outlet property="stepperLabel" destination="SAY-gi-KAX" id="19y-An-rhq"/>
+            </connections>
             <point key="canvasLocation" x="536.64122137404581" y="-42.95774647887324"/>
         </tableViewCell>
     </objects>

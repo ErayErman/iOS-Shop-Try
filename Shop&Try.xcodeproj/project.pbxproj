@@ -56,6 +56,7 @@
 		84C9EC59290EE9E800E03526 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C9EC57290EE9E800E03526 /* OnboardingView.xib */; };
 		84E5B72B290EECF100CBB0B6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */; };
 		84E5B72C290EECF100CBB0B6 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E5B72A290EECF100CBB0B6 /* OnboardingViewController.xib */; };
+		84FE6CE22918050F00EF092C /* BasketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE6CE12918050F00EF092C /* BasketModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		84C9EC57290EE9E800E03526 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		84E5B72A290EECF100CBB0B6 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		84FE6CE12918050F00EF092C /* BasketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		842294B62914658100386EA4 /* Basket */ = {
 			isa = PBXGroup;
 			children = (
+				84FE6CE02918050200EF092C /* Model */,
 				8478656C29151F22004676FF /* ViewModel */,
 				8478656D29151F4D004676FF /* View */,
 			);
@@ -575,6 +578,14 @@
 			path = OnboardingView;
 			sourceTree = "<group>";
 		};
+		84FE6CE02918050200EF092C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84FE6CE12918050F00EF092C /* BasketModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -743,6 +754,7 @@
 				84C9EC58290EE9E800E03526 /* OnboardingView.swift in Sources */,
 				845659F3291284C600FAB660 /* SearchViewModel.swift in Sources */,
 				845659CE29111B6F00FAB660 /* AuthViewModel.swift in Sources */,
+				84FE6CE22918050F00EF092C /* BasketModel.swift in Sources */,
 				8446E6FA290A8D03003AED10 /* AppDelegate.swift in Sources */,
 				8423BACC291709B5002C6141 /* Encodable+Extensions.swift in Sources */,
 				845659E92912764500FAB660 /* ProductModel.swift in Sources */,

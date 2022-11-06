@@ -44,7 +44,7 @@ final class AuthViewModel {
     }
     
     func writeData(username: String, email: String, number: String, favs: [[String: String]]){
-        let docRef = database.collection("shop-try/users/user").document("\(email)")
+        let docRef = database.collection("shop-try/users/user").document(email)
          let user = User(username: username, email: email, number: number, favorites: favs)
         do {
             guard let data = try user.dictionary else {return}

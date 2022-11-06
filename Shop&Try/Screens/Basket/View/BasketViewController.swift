@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import AlamofireImage
 
 class BasketViewController: UIViewController {
-
+    
     @IBOutlet var paymentButton: UIButton!
     @IBOutlet var tableView: UITableView!
-    private var viewModel: BasketViewModel
+    private var viewModel: BasketViewModelProtocol
+    let database = Firestore.firestore()
     
-    init(viewModel: BasketViewModel ) {
+    var addedData = [[String : String]]()
+    
+    init(viewModel: BasketViewModelProtocol ) {
             self.viewModel = viewModel
             super.init(nibName: nil, bundle: nil)
         }
@@ -24,7 +29,10 @@ class BasketViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+        viewModel.getData()
         setupUI()
+        tableView.reloadData()
     }
     private func setupUI() {
         let nib = UINib(nibName: "BasketTableViewCell", bundle: nil)
@@ -32,26 +40,58 @@ class BasketViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-
-           
+    
     }
-
 
 }
 
 extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        
+        return viewModel.addedData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasketTableViewCell", for: indexPath) as! BasketTableViewCell
+        let data = viewModel.addedData[indexPath.row]
+        cell.productLabel.text = data["name"]
+        cell.priceLabel.text = data["price"]
+        cell.stepperLabel.text = data["count"]
+        let urlString: String = data["image"] ?? "https://live.staticflickr.com/65535/52439244120_eb00d487fd_c.jpg"
+        let url = URL(string: urlString)!
+        cell.productImage?.af.setImage(withURL: url)
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
-    
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+            -> UISwipeActionsConfiguration? {
+            let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+                // delete the item here
+                completionHandler(true)
+            }
+            deleteAction.title = "Delete"
+            deleteAction.backgroundColor = .systemRed
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+            
+            return configuration
+    }
+
 }
+
+extension BasketViewController : BasketViewModelDelegate{
+    
+    func didErrorOccurred(_ error: Error) {
+        print(error.localizedDescription)
+    }
+
+    func didGetData() {
+        tableView.reloadData()
+    }
+}
+
+
