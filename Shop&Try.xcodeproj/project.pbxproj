@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84222E5F291861400012F70E /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84222E5D291861400012F70E /* OnboardingCell.swift */; };
+		84222E60291861400012F70E /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84222E5E291861400012F70E /* OnboardingCell.xib */; };
 		842294B52913FBC300386EA4 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 842294B42913FBC300386EA4 /* AlamofireImage */; };
 		8423BACC291709B5002C6141 /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423BACB291709B5002C6141 /* Encodable+Extensions.swift */; };
 		8446E6FA290A8D03003AED10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E6F9290A8D03003AED10 /* AppDelegate.swift */; };
@@ -52,8 +54,6 @@
 		848FD533291316F5009E76A1 /* Shop_Try_API.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 848FD531291316F5009E76A1 /* Shop_Try_API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8496F3B72916587E008CEF6B /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F3B62916587E008CEF6B /* BasketViewModel.swift */; };
 		8496F3BA29169EFB008CEF6B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F3B929169EFB008CEF6B /* ProfileModel.swift */; };
-		84C9EC58290EE9E800E03526 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9EC56290EE9E800E03526 /* OnboardingView.swift */; };
-		84C9EC59290EE9E800E03526 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C9EC57290EE9E800E03526 /* OnboardingView.xib */; };
 		84E5B72B290EECF100CBB0B6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */; };
 		84E5B72C290EECF100CBB0B6 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E5B72A290EECF100CBB0B6 /* OnboardingViewController.xib */; };
 		84FE6CE22918050F00EF092C /* BasketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE6CE12918050F00EF092C /* BasketModel.swift */; };
@@ -91,6 +91,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		84222E5D291861400012F70E /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		84222E5E291861400012F70E /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
 		8423BACB291709B5002C6141 /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		8446E6F6290A8D03003AED10 /* Shop&Try.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shop&Try.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8446E6F9290A8D03003AED10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,8 +136,6 @@
 		848FD531291316F5009E76A1 /* Shop_Try_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shop_Try_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8496F3B62916587E008CEF6B /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
 		8496F3B929169EFB008CEF6B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
-		84C9EC56290EE9E800E03526 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		84C9EC57290EE9E800E03526 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
 		84E5B729290EECF100CBB0B6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		84E5B72A290EECF100CBB0B6 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		84FE6CE12918050F00EF092C /* BasketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketModel.swift; sourceTree = "<group>"; };
@@ -572,8 +572,8 @@
 		84C9EC55290EE9A000E03526 /* OnboardingView */ = {
 			isa = PBXGroup;
 			children = (
-				84C9EC56290EE9E800E03526 /* OnboardingView.swift */,
-				84C9EC57290EE9E800E03526 /* OnboardingView.xib */,
+				84222E5D291861400012F70E /* OnboardingCell.swift */,
+				84222E5E291861400012F70E /* OnboardingCell.xib */,
 			);
 			path = OnboardingView;
 			sourceTree = "<group>";
@@ -706,13 +706,13 @@
 				845659E529113EF700FAB660 /* ProfileViewController.xib in Resources */,
 				846F9CCE290C789900A914C2 /* LaunchScreen.storyboard in Resources */,
 				848C829B290FFAA8000C4A9D /* GoogleService-Info.plist in Resources */,
+				84222E60291861400012F70E /* OnboardingCell.xib in Resources */,
 				8446E703290A8D04003AED10 /* Assets.xcassets in Resources */,
 				8478657129151F72004676FF /* BasketViewController.xib in Resources */,
 				845659F129127FD200FAB660 /* ProductsViewController.xib in Resources */,
 				848C828D290FEBEF000C4A9D /* AuthViewController.xib in Resources */,
 				8478657E2915318D004676FF /* ProductDetailsViewController.xib in Resources */,
 				845659FA29128DFE00FAB660 /* ProductsCollectionViewCell.xib in Resources */,
-				84C9EC59290EE9E800E03526 /* OnboardingView.xib in Resources */,
 				8478657629152DF8004676FF /* BasketTableViewCell.xib in Resources */,
 				848C8291290FF142000C4A9D /* SignUpViewController.xib in Resources */,
 				848C8295290FF165000C4A9D /* LoginViewController.xib in Resources */,
@@ -751,7 +751,6 @@
 				845659F029127FD200FAB660 /* ProductsViewController.swift in Sources */,
 				845659E429113EF700FAB660 /* ProfileViewController.swift in Sources */,
 				848C828C290FEBEF000C4A9D /* AuthViewController.swift in Sources */,
-				84C9EC58290EE9E800E03526 /* OnboardingView.swift in Sources */,
 				845659F3291284C600FAB660 /* SearchViewModel.swift in Sources */,
 				845659CE29111B6F00FAB660 /* AuthViewModel.swift in Sources */,
 				84FE6CE22918050F00EF092C /* BasketModel.swift in Sources */,
@@ -764,6 +763,7 @@
 				8478657029151F72004676FF /* BasketViewController.swift in Sources */,
 				845659F929128DFE00FAB660 /* ProductsCollectionViewCell.swift in Sources */,
 				8496F3BA29169EFB008CEF6B /* ProfileModel.swift in Sources */,
+				84222E5F291861400012F70E /* OnboardingCell.swift in Sources */,
 				84E5B72B290EECF100CBB0B6 /* OnboardingViewController.swift in Sources */,
 				845659D42911206600FAB660 /* AlertPresentable.swift in Sources */,
 				848C8290290FF142000C4A9D /* SignUpViewController.swift in Sources */,

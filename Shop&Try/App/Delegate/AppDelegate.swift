@@ -27,9 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupWindow() {
             let window = UIWindow(frame: UIScreen.main.bounds)
             //let viewModel = AuthViewModel()
-            let viewController = OnboardingViewController()
-            let navigationController = UINavigationController(rootViewController: viewController)
+            let onboardingViewController = OnboardingViewController()
+            let autViewController = AuthViewController()
+        if (UserDefaults.standard.value(forKey: "openedApp") as? Bool) == nil {
+            let navigationController = UINavigationController(rootViewController: onboardingViewController)
             window.rootViewController = navigationController
+        }else {
+            let navigationController = UINavigationController(rootViewController: autViewController)
+            window.rootViewController = navigationController
+
+        }
             window.makeKeyAndVisible()
             self.window = window
         }
