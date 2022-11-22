@@ -1,4 +1,4 @@
-# Shop&Try ( Patika.Dev - Pazarama iOS Bootcamp Graduate Project )
+# Shop&Try
 
  Shop&Try is a shopping app built with FakeStoreApi ->  https://fakestoreapi.com/
  ![Shop Try-logos copy](https://user-images.githubusercontent.com/55625400/200405363-635f5f8f-05f1-4c01-801a-7f3118e0db2c.jpeg)
